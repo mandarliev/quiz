@@ -1,6 +1,7 @@
 import quizCompleteImg from "../assets/quiz-complete.png";
 import { useState } from "react";
 import QUESTIONS from "../questions";
+import QuestionTimer from "./QuestionTimer";
 
 const Quiz = () => {
   const [userAnswers, setUserAnswers] = useState([]);
@@ -40,6 +41,10 @@ const Quiz = () => {
             </li>
           ))}
         </ul>
+        <QuestionTimer
+          timeout={10000}
+          onTimeout={() => handleSelectAnswer(null)}
+        />
       </div>
     </div>
   );
